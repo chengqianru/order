@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/public.css">
+    <script src="js/rem.js"></script>
+    <style>
+        .header{
+            height: 2.96rem;
+            width: 100%;
+            background: #00A3FF;
+            padding: .28rem .36rem;
+            /*position: relative;*/
+        }
+        .header_shang{
+            line-height: .3rem;
+        }
+        .header_shang_left{
+            width: .17rem;
+            height: .28rem;
+            font-size: .28rem;
+            color: #fff;
+            float: left;
+        }
+        .header_shang_rig{
+            font-size: .3rem;
+            margin-left: 2.78rem;
+            color: #fff;
+        }
+        .header_page{
+            width: 1.18rem;
+            height: 1.18rem;
+            margin-left: .27rem;
+            margin-top: .74rem;
+            float: left;
+        }
+        .header_page img{
+            width: 1.18rem;
+            height: 1.18rem;
+        }
+        .header_xia{
+            float: left;
+            height: .79rem;
+            margin-left: .18rem;
+            margin-top: .96rem;
+            padding: 0 .38rem;
+        }
+        .header_xia p{
+            font-size: .34rem;
+            color: #fff;
+            line-height: .48rem;
+        }
+        .header_xia h2{
+            font-size: .22rem;
+            color: #fff;
+            line-height: .48rem;
+            text-align: center;
+            float: left;
+        }
+        .footer{
+            height: .96rem;
+            width: 100%;
+            position: fixed;
+            border-top: 2px solid #DDDDDD;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+        }
+        .footer_item{
+            width: 1.8rem;
+            height: .96rem;
+            float: left;
+        }
+        .footer_item_shang{
+            width: .38rem;
+            height: .36rem;
+            margin-left: .71rem;
+            margin-top: .2rem;
+            position: relative;
+        }
+        .footer_item_shang img{
+            width: .38rem;
+            height: .36rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .footer_item_xia{
+            margin-top: .12rem;
+            font-size: .16rem;
+            line-height: .16rem;
+            text-align: center;
+        }
+        .main{
+            position: absolute;
+            overflow-y: scroll;
+            top: 2.96rem;
+            left: 0;
+            right: 0;
+            bottom: .96rem;
+            background-color: #F5F5F5;
+        }
+        .main::-webkit-scrollbar{
+            display: none;
+        }
+        .main_shang{
+            width: 100%;
+            height: 1.58rem;
+            border-bottom: .02rem solid #DDDDDD;
+        }
+        .main_shang_item{
+            width: 2.4rem;
+            height: 1.58rem;
+            border-right: .02rem solid #DDDDDD;
+            float: left;
+            background: #fff;
+        }
+        .main_shang_item_pic{
+            width: .48rem;
+            height: .5rem;
+            margin: 0 auto;
+            margin-top: .32rem;
+            position: relative;
+        }
+        .main_shang_item_pic img{
+            width: .48rem;
+            height: .5rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .main_shang_item_wen{
+            margin-top: .18rem;
+            font-size: .22rem;
+            line-height: .22rem;
+            text-align: center;
+        }
+        .main_adress{
+            width: 100%;
+            height: .86rem;
+            border-bottom: .02rem solid #DDDDDD;
+            border-top: .02rem solid #DDDDDD;
+            margin-top: .18rem;
+            background: #fff;
+        }
+        .main_adress_left{
+            width: .36rem;
+            height: .34rem;
+            margin-top: .26rem;
+            margin-left: .28rem;
+            float: left;
+            position: relative;
+        }
+        .main_adress_left img{
+            width: .36rem;
+            height: .34rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .main_adress_right{
+            float: left;
+            line-height: .86rem;
+            font-size: .28rem;
+            margin-left: .21rem;
+        }
+        .main_adress_right p{
+            float: left;
+        }
+        .main_adress_icon{
+            float: right;
+            margin-right: .24rem;
+            line-height: .86rem;
+            font-size: .22rem;
+            font-weight: bold;
+            color: #BBBBBB;
+        }
+        .main_money{
+            width: 100%;
+            height: 1.74rem;
+            margin-top: .18rem;
+            border-bottom: .02rem solid #DDDDDD;
+            border-top: .02rem solid #DDDDDD;
+            background: #fff;
+        }
+        .main_money_shang,.main_money_xia{
+            height: .86rem;
+        }
+        .main_money_line{
+            width: 6.38rem;
+            height: .02rem;
+            margin-left: .82rem;
+            background: #EEEEEE;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="header_shang">
+        <div class="header_shang_left">&lt;</div>
+        <div class="header_shang_rig">我的</div>
+    </div>
+    <div class="header_page">
+        <a href="personal.html"><img src="imgs/40.png" alt=""></a>
+    </div>
+    <div class="header_xia">
+        <a href="login.html" ><p>登录/注册</p></a>
+        <h2>登录后享受更多特权</h2>
+    </div>
+</div>
+<section class="main">
+    <div class="main_shang">
+        <div class="main_shang_item">
+            <div class="main_shang_item_pic">
+                <img src="imgs/42.png" alt="">
+            </div>
+            <div class="main_shang_item_wen">钱包</div>
+        </div>
+        <div class="main_shang_item">
+            <div class="main_shang_item_pic">
+                <img src="imgs/43.png" alt="">
+            </div>
+            <div class="main_shang_item_wen">钱包</div>
+        </div>
+        <div class="main_shang_item" style="border: none;">
+            <div class="main_shang_item_pic">
+                <img src="imgs/44.png" alt="">
+            </div>
+            <div class="main_shang_item_wen">钱包</div>
+        </div>
+    </div>
+    <div class="main_adress">
+        <div class="main_adress_left">
+            <img src="imgs/45.png" alt="">
+        </div>
+        <div class="main_adress_right">
+            <p>我的地址</p>
+        </div>
+        <div class="main_adress_icon">
+            <span>&gt;</span>
+        </div>
+    </div>
+    <div class="main_money">
+        <div class="main_money_shang">
+            <div class="main_adress_left">
+                <img src="imgs/46.png" alt="">
+            </div>
+            <div class="main_adress_right">金币商城</div>
+            <div class="main_adress_icon">
+                <span>&gt;</span>
+            </div>
+        </div>
+        <div class="main_money_line"></div>
+        <div class="main_money_xia">
+            <div class="main_adress_left">
+                <img src="imgs/47.png" alt="">
+            </div>
+            <div class="main_adress_right">分享拿5元现金</div>
+            <div class="main_adress_icon">
+                <span>&gt;</span>
+            </div>
+        </div>
+    </div>
+    <div class="main_money">
+        <div class="main_money_shang">
+            <div class="main_adress_left">
+                <img src="imgs/48.png" alt="">
+            </div>
+            <div class="main_adress_right">我的客服</div>
+            <div class="main_adress_icon">
+                <span>&gt;</span>
+            </div>
+        </div>
+        <div class="main_money_line"></div>
+        <div class="main_money_xia">
+            <div class="main_adress_left">
+                <img src="imgs/49.png" alt="">
+            </div>
+            <div class="main_adress_right">下载饭来啦APP</div>
+            <div class="main_adress_icon">
+                <span>&gt;</span>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="footer">
+    <div class="footer_item">
+        <div class="footer_item_shang">
+            <a href="index.html"><img src="imgs/f1.png" alt=""></a>
+        </div>
+        <div class="footer_item_xia">首页</div>
+    </div>
+    <div class="footer_item">
+        <div class="footer_item_shang">
+            <a href="find.html"><img src="imgs/f2.png" alt=""></a>
+        </div>
+        <div class="footer_item_xia">发现</div>
+    </div>
+    <div class="footer_item">
+        <div class="footer_item_shang">
+            <a href="order.html"><img src="imgs/f3.png" alt=""></a>
+        </div>
+        <div class="footer_item_xia">订单</div>
+    </div>
+    <div class="footer_item">
+        <div class="footer_item_shang">
+            <img src="imgs/f4b.png" alt="">
+        </div>
+        <div class="footer_item_xia" style="color: #008CFF;">我的</div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/public.css">
+    <script src="js/rem.js"></script>
+    <style>
+        body{
+            background: #fff;
+        }
+        .login_title{
+            height: 2.2rem;
+            width: 100%;
+        }
+        .login_fan{
+            width: 100%;
+            line-height: .7rem;
+            font-size: .3rem;
+            padding-left: .3rem;
+            background: rgba(178,178,178,.3);
+        }
+        .login_title h1{
+            margin-top: .3rem;
+            font-family: 华文隶书;
+            font-size: .68rem;
+            text-align: center;
+            color: #1B9DFF;
+        }
+        .login_title h2{
+            font-size: .3rem;
+            margin-top: .1rem;
+            text-align: center;
+            color: #1B9DFF;
+        }
+        .login_bottom{
+            margin-top: .9rem;
+        }
+        .main_biao_box{
+            position: relative;
+
+        }
+        .main_biao{
+            height: 8rem;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #fff;
+        }
+        .main_biao.active{
+            z-index: 99;
+        }
+        .main_biao li{
+            width: 6.92rem;
+            margin: auto;
+        }
+        .main_biao li input{
+            width: 6.92rem;
+            height: .84rem;
+            border: .02rem solid #E2E2E2;
+            margin-bottom: .2rem;
+            background: #F9F9F9;
+            color: #fff;
+            padding-left: .28rem;
+            line-height: .84rem;
+        }
+        .main_biao .tishi{
+            width: .32rem;
+            height: .32rem;
+            border: .02rem solid #B2B2B2;
+            background: #EAEAEA;
+            float: left;
+        }
+        .main_wen{
+            float: left;
+            font-size: .24rem;
+            color: #666;
+            margin-left: .26rem;
+        }
+        .main_zi{
+            font-size: .2rem;
+            text-align: center;
+            color: #666;
+        }
+        .login_bottom_title{
+            height: .3rem;
+        }
+        .login_bottom_title_left{
+            width: 3.6rem;
+            float: left;
+            text-align: center;
+            line-height: .3rem;
+            font-size: .3rem;
+            z-index: 99;
+        }
+        .login_bottom_title_left.active{
+            color: #1B9DFF;
+        }
+    </style>
+</head>
+<body>
+<div class="login">
+    <div class="login_title">
+        <a href="wode.html"><div class="login_fan">&gt;</div></a>
+        <h1>饭来啦</h1>
+        <h2>Eventhing 30'</h2>
+    </div>
+    <div class="login_bottom">
+        <div class="login_bottom_title">
+            <div class="login_bottom_title_left active">短信登录</div>
+            <div class="login_bottom_title_left">密码登录</div>
+        </div>
+        <div class="main_biao_box">
+            <ul class="main_biao active">
+                <li><input type="text" placeholder="请输入邮箱/手机号码"></li>
+                <li><input type="password" placeholder="请输入登录密码"></li>
+                <li style="margin-top: .68rem;">
+                    <input type="checkbox"  class="tishi">
+                    <p class="main_wen">一个月内免登录</p>
+                </li>
+                <li><input type="submit" value="登录" style="background: #1B9DFF; font-size: .28rem;"></li>
+                <li>
+                   <div class="main_zi">关于我们</div>
+                </li>
+            </ul>
+            <ul class="main_biao">
+                <li><input type="text" placeholder="邮箱/手机/用户名"></li>
+                <li><input type="password" placeholder="密码"></li>
+                <li><input type="submit" value="登录" style="background: #1B9DFF; font-size: .28rem;"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var item=document.querySelectorAll(".main_biao");
+    var title=document.querySelectorAll(".login_bottom_title_left");
+    title.forEach(function(ele,index){
+        ele.onclick=function(){
+            for(let i=0;i<title.length;i++){
+                title[i].classList.remove("active");
+                item[i].classList.remove("active");
+            }
+            this.classList.add("active");
+            item[index].classList.add("active");
+            // n=index;
+        }
+    });
+</script>
+</html>

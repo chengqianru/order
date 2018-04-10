@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/public.css">
+    <script src="js/rem.js"></script>
+    <style>
+        .header{
+            height: .89rem;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #0089FF;
+            border-top: .01rem solid #eee;
+        }
+        .header_left{
+            width: .2rem;
+            height: .32rem;
+            margin-top: .28rem;
+            margin-left: .22rem;
+            /*background-color: red;*/
+            float: left;
+            position: relative;
+        }
+        .header_left a{
+            color: #fff;
+            font-size: .32rem;
+            position: absolute;
+            top: 0;
+        }
+        .header_zhong{
+            width: 1rem;
+            height: .33rem;
+            margin-top: .3rem;
+            margin-left: 2.58rem;
+            /*background-color: green;*/
+            float: left;
+        }
+        .header_zhong h1{
+            font-size: .32rem;
+            color: #fff;
+            line-height: .28rem;
+        }
+        .footer{
+            height: .96rem;
+            width: 100%;
+            position: fixed;
+            border-top: 2px solid #DDDDDD;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+        }
+        .footer_item{
+            width: 1.8rem;
+            height: .96rem;
+            float: left;
+        }
+        .footer_item_shang{
+            width: .38rem;
+            height: .36rem;
+            margin-left: .71rem;
+            margin-top: .2rem;
+            position: relative;
+        }
+        .footer_item_shang img{
+            width: .38rem;
+            height: .36rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .footer_item_xia{
+            margin-top: .12rem;
+            font-size: .16rem;
+            line-height: .16rem;
+            text-align: center;
+        }
+        .main{
+            position: absolute;
+            top: .89rem;
+            overflow-y: scroll;
+            left: 0;
+            right: 0;
+            bottom: .96rem;
+            background-color: #F1F1F1;
+        }
+        .main::-webkit-scrollbar{
+            display: none;
+        }
+        .main_title{
+            width: 100%;
+            height: 1.46rem;
+            background: #fff;
+        }
+        .main_title_item{
+            width: 1.8rem;
+            height: 1.46rem;
+            float: left;
+        }
+        .main_title_item_picture{
+            width: .49rem;
+            height: .35rem;
+            margin-left: .65rem;
+            margin-top: 0.36rem;
+            position: relative;
+        }
+        .main_title_item_picture img{
+            width: .49rem;
+            height: .35rem;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .main_title_item_wenzi{
+            line-height: .22rem;
+            margin-top: .17rem;
+            text-align: center;
+            color: #757575;
+            font-size: .22rem;
+        }
+        .main_recent h1{
+            font-size: .26rem;
+            color: #999999;
+            line-height: .48rem;
+            margin-left: .24rem;
+        }
+        .main_order{
+            height: 1.96rem;
+            width: 100%;
+            border-bottom: .01rem solid #D8D8D8;
+            background: #fff;
+        }
+        .main_order_left{
+            width: .76rem;
+            height: .76rem;
+            float: left;
+            margin-left: .24rem;
+            margin-top: .34rem;
+            position: relative;
+        }
+        .main_order_left img{
+            width: .76rem;
+            height: .76rem;
+            position: absolute;
+        }
+        .main_order_zhong{
+            float: left;
+            margin-left: .17rem;
+            width: 4.5rem;
+        }
+        .main_order_zhong h2{
+            font-size: .26rem;
+            margin-top: .38rem;
+            color: #000;
+        }
+        .main_order_zhong h3{
+            font-size: .24rem;
+            margin-top: .18rem;
+            color: #666;
+        }
+        .main_order_zhong span{
+            font-size: .22rem;
+            margin-top: .18rem;
+            color: #666;
+            float: left;
+        }
+        .main_order_zhong span p{
+            font-size: .18rem;
+            /*margin-top: .18rem;*/
+            color: #666;
+            float: left;
+        }
+        .main_order_rig{
+            width: 1.28rem;
+            float: right;
+            margin-right: .24rem;
+        }
+        .main_order_rig p{
+            font-size: .24rem;
+            margin-top: .38rem;
+            color: #06C1AE;
+            float: right;
+        }
+        .main_order_rig_box{
+            width: 1.28rem;
+            height: .52rem;
+            border: .02rem solid #FF9900;
+            border-radius: .08rem;
+            float: right;
+            font-size: .28rem;
+            text-align: center;
+            line-height: .52rem;
+            color: #FF6A00;
+            margin-top: .3rem;
+        }
+        .main_more{
+            height: .89rem;
+            background: #fff;
+        }
+        .main_more_box{
+            margin: 0 auto;
+            height: .89rem;
+            width: .94rem;
+        }
+        .main_more_box_zi{
+            line-height: .89rem;
+            font-size: .24rem;
+            color: #0089FF;
+            float: left;
+        }
+        .main_more_box_icon{
+            line-height: .89rem;
+            font-size: .24rem;
+            color: #0089FF;
+            float: left;
+            margin-left: .24rem;
+            font-weight: bold;
+        }
+        .main_collect{
+            width: 100%;
+            margin-top: .22rem;
+        }
+        .main_collect_title{
+            background: #fff;
+            height: .88rem;
+            margin-bottom: .02rem;
+        }
+        .main_collect_title_left{
+            line-height: .88rem;
+            font-size: .28rem;
+            margin-left: .23rem;
+            color: #000;
+            float: left;
+        }
+        .main_collect_title_right{
+            line-height: .88rem;
+            float: right;
+            margin-right: .24rem;
+        }
+        .main_collect_title_right h1{
+            font-size: .24rem;
+            color: #666;
+            float: left;
+            line-height: .88rem;
+        }
+        .main_collect_title_right span{
+            line-height: .88rem;
+            font-size: .2rem;
+            color: #666;
+            float: left;
+            margin-left: .2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<section class="header">
+    <div class="header_left">
+        <a href="index.html">&lt;</a>
+    </div>
+    <div class="header_zhong">
+        <h1>订单</h1>
+    </div>
+</section>
+<section class="main">
+    <div class="main_title">
+        <div class="main_title_item">
+            <div class="main_title_item_picture">
+                <img src="imgs/32.png" alt="">
+            </div>
+            <div class="main_title_item_wenzi">待付款</div>
+        </div>
+        <div class="main_title_item">
+            <div class="main_title_item_picture">
+                <img src="imgs/31.png" alt="">
+            </div>
+            <div class="main_title_item_wenzi">待使用</div>
+        </div>
+        <div class="main_title_item">
+            <div class="main_title_item_picture">
+                <img src="imgs/33.png" alt="">
+            </div>
+            <div class="main_title_item_wenzi">待评价</div>
+        </div>
+        <div class="main_title_item">
+            <div class="main_title_item_picture" style="width: .38rem; height: .38rem;margin-top: .32rem ">
+                <img src="imgs/34.png" alt="" style="width: .38rem; height: .38rem;">
+            </div>
+            <div class="main_title_item_wenzi">退款/售后</div>
+        </div>
+    </div>
+    <div class="main_recent">
+        <h1>最近订单</h1>
+        <div class="main_order">
+            <div class="main_order_left">
+                <img src="imgs/35.png" alt="">
+            </div>
+            <div class="main_order_zhong">
+                <h2>自助火锅 </h2>
+                <h3>数量：1</h3>
+                <span>总价：&yen;36.00</span>
+           </div>
+            <div class="main_order_rig">
+                <p>待评价</p>
+                <div class="main_order_rig_box">评价</div>
+            </div>
+        </div>
+        <div class="main_order">
+            <div class="main_order_left">
+                <img src="imgs/35.png" alt="">
+            </div>
+            <div class="main_order_zhong">
+                <h2>自助火锅 </h2>
+                <h3>数量：1</h3>
+                <span>总价：&yen;36.00</span>
+            </div>
+            <div class="main_order_rig">
+                <p>待评价</p>
+                <div class="main_order_rig_box">评价</div>
+            </div>
+        </div>
+        <div class="main_more">
+            <div class="main_more_box">
+                <div class="main_more_box_zi">更多</div>
+                <div class="main_more_box_icon">&gt;</div>
+            </div>
+        </div>
+        <div class="main_collect">
+            <div class="main_collect_title">
+                <div class="main_collect_title_left">我的收藏</div>
+                <div class="main_collect_title_right">
+                    <h1>查看全部</h1>
+                    <span>&gt;</span>
+                </div>
+            </div>
+            <div class="main_order">
+                <div class="main_order_left">
+                    <img src="imgs/35.png" alt="">
+                </div>
+                <div class="main_order_zhong">
+                    <h2>自助火锅 </h2>
+                    <h3 style="float: left;color: #FF9D08">★★★</h3><h3>★人均：&yen;53.00</h3>
+                    <span>火锅自助</span>
+                </div>
+                <div class="main_order_rig">
+                    <p>4.9km</p>
+                </div>
+            </div>
+            <div class="main_order">
+                <div class="main_order_left">
+                    <img src="imgs/35.png" alt="">
+                </div>
+                <div class="main_order_zhong">
+                    <h2>自助火锅 </h2>
+                    <h3 style="float: left;color: #FF9D08">★★★★</h3><h3>人均：&yen;36.00</h3>
+                    <span>火锅自助</span>
+                </div>
+                <div class="main_order_rig">
+                    <p>6.0km</p>
+                </div>
+            </div>
+            <div class="main_more">
+                <div class="main_more_box">
+                    <div class="main_more_box_zi">更多</div>
+                    <div class="main_more_box_icon">&gt;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="footer">
+    <div class="footer_item">
+        <div class="footer_item_shang">
+            <a href="index.html"><img src="imgs/f1.png" alt=""></a>
+        </div>
+        <div class="footer_item_xia">首页</div>
+    </div>
+    <div class="footer_item">
+        <div class="footer_item_shang">
+            <a href="find.html"><img src="imgs/f2.png" alt=""></a>
+        </div>
+        <div class="footer_item_xia">发现</div>
+    </div>
+    <div class="footer_item">
+        <div class="footer_item_shang">
+            <img src="imgs/f3a.png" alt="">
+        </div>
+        <div class="footer_item_xia" style="color: #008CFF;">订单</div>
+    </div>
+    <div class="footer_item">
+        <div class="footer_item_shang">
+            <a href="wode.html"><img src="imgs/f4.png" alt=""></a>
+        </div>
+        <div class="footer_item_xia">我的</div>
+    </div>
+</section>
+</body>
+</html>

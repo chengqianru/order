@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/public.css">
+    <script src="js/rem.js"></script>
+    <style>
+        @font-face {
+            font-family: 'iconfont';  /* project id 623077 */
+            src: url('https://at.alicdn.com/t/font_623077_gxnndd2f383nb3xr.eot');
+            src: url('https://at.alicdn.com/t/font_623077_gxnndd2f383nb3xr.eot?#iefix') format('embedded-opentype'),
+            url('https://at.alicdn.com/t/font_623077_gxnndd2f383nb3xr.woff') format('woff'),
+            url('https://at.alicdn.com/t/font_623077_gxnndd2f383nb3xr.ttf') format('truetype'),
+            url('https://at.alicdn.com/t/font_623077_gxnndd2f383nb3xr.svg#iconfont') format('svg');
+        }
+        .header{
+            height: .89rem;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #0089FF;
+            border-top: .01rem solid #eee;
+        }
+        .header_left{
+            width: .2rem;
+            height: .32rem;
+            margin-top: .28rem;
+            margin-left: .22rem;
+            /*background-color: red;*/
+            float: left;
+            position: relative;
+        }
+        .header_left a{
+            color: #fff;
+            font-size: .32rem;
+            position: absolute;
+            top: 0;
+        }
+        .header_zhong{
+            height: .33rem;
+            margin-top: .3rem;
+            margin-left: 2.58rem;
+            /*background-color: green;*/
+            float: left;
+        }
+        .header_zhong h1{
+            font-size: .32rem;
+            color: #fff;
+            line-height: .28rem;
+        }
+        .main{
+            position: absolute;
+            top: .89rem;
+            overflow-y: scroll;
+            left: 0;
+            right: 0;
+            background-color: #F1F1F1;
+        }
+        .main_image{
+            height: 1.34rem;
+            width: 100%;
+            border-bottom: .02rem solid #EEEEEE;
+            background: #fff;
+        }
+        .main_image_zi{
+            font-size: .26rem;
+            line-height: 1.34rem;
+            margin-left: .3rem;
+            float: left;
+        }
+        .main_image_rig{
+            float: right;
+        }
+        .main_image_pic{
+            width: .96rem;
+            height: .96rem;
+            float: left;
+            margin-right: .1rem;
+        }
+        .main_image_pic img{
+            width: .96rem;
+            height: .96rem;
+        }
+        .main_image_rig h1{
+             font-size: .24rem;
+             line-height: 1.34rem;
+             float: left;
+             margin-right: .3rem;
+         }
+        .main_image_icon{
+            font-size: .24rem;
+            color: #999999;
+            line-height: 1.34rem;
+            float: left;
+            margin-right: .37rem;
+            font-weight: bold;
+        }
+        .main_bangding_title{
+            height: .7rem;
+            margin-left: .22rem;
+            margin-top: .36rem;
+            font-size: .22rem;
+        }
+        .main_bangding_item{
+            height: .97rem;
+            background: #fff;
+            margin-bottom: .02rem;
+        }
+        .main_bangding_item_left{
+            float: left;
+        }
+        .main_bangding_item_left h1{
+            float: left;
+            font-size: .3rem;
+            line-height: .97rem;
+        }
+        .main_bangding_item_left span{
+            float: left;
+            font-size: .3rem;
+            line-height: .97rem;
+            margin-left: .2rem;
+            font-family: 'iconfont';
+            color: #0089FF;
+        }
+        .main_bangding_item_rig{
+            float: right;
+        }
+        .main_bangding_item_rig h1{
+            font-size: .24rem;
+            line-height: .97rem;
+            float: left;
+            margin-right: .3rem;
+        }
+        .main_seft{
+            margin-top: .72rem;
+        }
+        .main_tuichu{
+            line-height: .98rem;
+            margin-top: .36rem;
+            background: #fff;
+            text-align: center;
+            color: #FF6953;
+            font-size: .26rem;
+            margin-bottom: .9rem;
+        }
+    </style>
+</head>
+<body>
+<section class="header">
+    <div class="header_left">
+        <a href="wode.html">&lt;</a>
+    </div>
+    <div class="header_zhong">
+        <h1>账户信息</h1>
+    </div>
+</section>
+<section class="main">
+    <div class="main_image">
+        <div class="main_image_zi">头像</div>
+        <div class="main_image_rig">
+            <div class="main_image_pic">
+                <img src="imgs/p1.png" alt="">
+            </div>
+            <div class="main_image_icon">&gt;</div>
+        </div>
+    </div>
+    <div class="main_image">
+        <div class="main_image_zi">用户名</div>
+        <div class="main_image_rig">
+            <h1>8****0</h1>
+            <div class="main_image_icon">&gt;</div>
+        </div>
+    </div>
+    <div class="main_bangding">
+        <div class="main_bangding_title">账号绑定</div>
+        <div class="main_bangding_item">
+            <div class="main_bangding_item_left">
+                <span>&#xe66b;</span>
+                <h1>手机</h1>
+            </div>
+            <div class="main_bangding_item_rig">
+                <h1>157****0</h1>
+                <div class="main_image_icon" style="line-height: .97rem">&gt;</div>
+            </div>
+        </div>
+        <div class="main_bangding_item">
+            <div class="main_bangding_item_left">
+                <span style="color: #4EB54E; font-size: .4rem">&#xe62c;</span>
+                <h1>微信</h1>
+            </div>
+            <div class="main_bangding_item_rig">
+                <h1>未绑定</h1>
+                <div class="main_image_icon" style="line-height: .97rem">&gt;</div>
+            </div>
+        </div>
+        <div class="main_bangding_item">
+            <div class="main_bangding_item_left">
+                <span style="color: red;">&#xe6a1;</span>
+                <h1>QQ</h1>
+            </div>
+            <div class="main_bangding_item_rig">
+                <h1>未绑定</h1>
+                <div class="main_image_icon" style="line-height: .97rem">&gt;</div>
+            </div>
+        </div>
+        <div class="main_bangding_item">
+            <div class="main_bangding_item_left">
+                <span style="color: #F21A34; font-size: .4rem;">&#xe618;</span>
+                <h1>微博</h1>
+            </div>
+            <div class="main_bangding_item_rig">
+                <h1>未绑定</h1>
+                <div class="main_image_icon" style="line-height: .97rem">&gt;</div>
+            </div>
+        </div>
+        <div class="main_bangding_item">
+            <div class="main_bangding_item_left">
+                <span style="color: #FF4000; font-size: .36rem">&#xe610;</span>
+                <h1>淘宝</h1>
+            </div>
+            <div class="main_bangding_item_rig">
+                <h1>未绑定</h1>
+                <div class="main_image_icon" style="line-height: .97rem">&gt;</div>
+            </div>
+        </div>
+    </div>
+    <div class="main_seft">
+        <div class="main_bangding_title">安全设置</div>
+        <div class="main_bangding_item">
+            <div class="main_bangding_item_left" style="padding-left: .2rem;">
+                <h1>登录密码</h1>
+            </div>
+            <div class="main_bangding_item_rig">
+                <h1>修改</h1>
+                <div class="main_image_icon" style="line-height: .97rem">&gt;</div>
+            </div>
+        </div>
+        <div class="main_bangding_item" style="padding-left: .2rem;">
+            <div class="main_bangding_item_left">
+                <h1>支付密码</h1>
+            </div>
+            <div class="main_bangding_item_rig">
+                <h1>修改</h1>
+                <div class="main_image_icon" style="line-height: .97rem">&gt;</div>
+            </div>
+        </div>
+        <div class="main_bangding_item" style="padding-left: .2rem;">
+            <div class="main_bangding_item_left">
+                <h1>小额免密支付</h1>
+            </div>
+            <div class="main_bangding_item_rig">
+                <h1>设置</h1>
+                <div class="main_image_icon" style="line-height: .97rem">&gt;</div>
+            </div>
+        </div>
+    </div>
+    <div class="main_tuichu">退出登录</div>
+</section>
+</body>
+</html>

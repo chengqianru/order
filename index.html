@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/public.css">
+    <script src="js/rem.js"></script>
+    <style>
+        @font-face {
+            font-family: 'iconfont';  /* project id 570248 */
+            src: url('//at.alicdn.com/t/font_570248_3jav2113r1azia4i.eot');
+            src: url('//at.alicdn.com/t/font_570248_3jav2113r1azia4i.eot?#iefix') format('embedded-opentype'),
+            url('//at.alicdn.com/t/font_570248_3jav2113r1azia4i.woff') format('woff'),
+            url('//at.alicdn.com/t/font_570248_3jav2113r1azia4i.ttf') format('truetype'),
+            url('//at.alicdn.com/t/font_570248_3jav2113r1azia4i.svg#iconfont') format('svg');
+        }
+        .header{
+            height: .98rem;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: #0098FF;
+        }
+        .header_search{
+            height: .68rem;
+            margin: 0 auto;
+            margin-top: .15rem;
+            width: 6.68rem;
+            background-color: #fff;
+        }
+        input{
+            height: .68rem;
+            float: left;
+            outline: none;
+            border: 0;
+            background: none;
+            margin-left: .12rem;
+        }
+        .sousuo{
+            height: .68rem;
+            width: .49rem;
+            float: left;
+            font-family: 'iconfont';
+            font-size: .24rem;
+            margin-left: 1.54rem;
+        }
+        .main{
+            position: absolute;
+            top: .98rem;
+            overflow-y: scroll;
+            left: 0;
+            right: 0;
+            bottom: .96rem;
+            /*background-color: #EEEEEE;*/
+        }
+        .main::-webkit-scrollbar{
+            display: none;
+        }
+        .main_banner_pic{
+            width: 100%;
+            height: 1.62rem;
+        }
+        .main_banner_pic img{
+            width: 100%;
+            height: 1.62rem;
+        }
+        .main_banner_daohang{
+            height: 2.56rem;
+            /*background: #010101;*/
+        }
+        .main_banner_ditem{
+            height: 1.05rem;
+            width: 1.44rem;
+            float: left;
+        }
+        .main_banner_ditem_tu{
+            margin-left: .44rem;
+            margin-top: .26rem;
+            height: .46rem;
+            width: .56rem;
+            position: relative;
+        }
+        .main_banner_ditem_tu img{
+            height: .46rem;
+            width: .56rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .main_banner_ditem_zi{
+            font-size: .14rem;
+            margin-top: .14rem;
+            line-height: .14rem;
+            color: #6D6D6D;
+            text-align: center;
+        }
+        .main_zhanshi{
+            width: 6.8rem;
+            height: 1.86rem;
+            margin: 0 auto;
+        }
+        .main_zhanshi_item{
+            width: 3.3rem;
+            height: 1.86rem;
+            margin-right: .18rem;
+            background: #EFEFEF;
+            float: left;
+            position: relative;
+        }
+        .main_zhanshi_item h1{
+            font-size: .24rem;
+            color: #8B323A;
+            margin-top: .2rem;
+            margin-left: .22rem;
+        }
+        .main_zhanshi_item h2{
+            font-size: .16rem;
+            color: #787878;
+            margin-top: .14rem;
+            margin-left: .22rem;
+        }
+        .main_zhanshi_item h3{
+            font-size: .14rem;
+            color: #8B323A;
+            margin-top: .18rem;
+            margin-left: .22rem;
+            float: left;
+        }
+        .main_zhanshi_item p{
+            font-size: .14rem;
+            color: #000;
+            margin-top: .18rem;
+            margin-left: .1rem;
+            float: left;
+        }
+        .main_zhanshi_item span{
+            font-size: .14rem;
+            color: #000;
+            margin-top: .18rem;
+            margin-left: .13rem;
+            float: left;
+        }
+        .main_zhanshi_item_tu{
+            width: 1.9rem;
+            height: .9rem;
+            position: absolute;
+            right: 0;
+            top: 0.76rem;
+        }
+        .main_zhanshi_item_tu img{
+            width: 1.9rem;
+            height: .9rem;
+        }
+        .main_bottom{
+            background: #fff;
+        }
+        .main_bottom_title{
+            width: 3.2rem;
+            height: .32rem;
+            margin:auto;
+            margin-top: .66rem;
+            margin-bottom: .24rem;
+        }
+        .main_bottom_title_juxing{
+            width: .7rem;
+            height: .02rem;
+            margin-top: .12rem;
+            background-color: #BBBBBB;
+            float: left;
+        }
+        .main_bottom_title p{
+            font-size: .26rem;
+            color: #232323;
+            margin-left: .26rem;
+            float: left;
+            margin-right: .26rem;
+            line-height: .20rem;
+        }
+        .main_bottom_item{
+            width: 100%;
+            height: 2.86rem;
+            padding: .3rem .25rem;
+            border-bottom: .02rem solid #eee;
+        }
+        .main_bottom_item_left{
+            width: 1.24rem;
+            height: 1.24rem;
+            border: .02rem solid #EBEBEB;
+            float: left;
+        }
+        .main_bottom_item_left img{
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+        .main_bottom_item_zhong{
+            /*width: 3rem;*/
+            float: left;
+            margin-left: .12rem;
+        }
+        .main_bottom_item_zhong h1{
+            font-size: .22rem;
+        }
+        .main_bottom_item_zhong_zuo{
+            float: left;
+            width: 3.7rem;
+        }
+        .main_item_qingkuang{
+            margin-top: .26rem;
+            line-height: .18rem;
+            float: left;
+            font-size: .18rem;
+            color: #FF6A00;
+            /*width: 1.3rem;*/
+        }
+        .main_item_qingkuang span{
+            float: left;
+        }
+        .main_item_qingkuang p{
+            float: left;
+        }
+        .main_item_price{
+            width: 2.9rem;
+            font-size: .2rem;
+            line-height: .2rem;
+            color: #666666;
+            margin-top: .22rem;
+            float: left;
+        }
+        .main_item_price span{
+            float: left;
+        }
+        .main_item_price p{
+            float: left;
+        }
+        .main_item_youhui{
+            margin-top: .4rem;
+            height: .65rem;
+            float: left;
+        }
+        .main_item_youhui_shang{
+            width: 100%;
+            height: .27rem;
+            margin-bottom: .11rem;
+        }
+        .box{
+            float: left;
+            width: .27rem;
+            height: .27rem;
+            border-radius: .07rem;
+            background: #70BC49;
+            font-size: .16rem;
+            line-height: .27rem;
+            text-align: center;
+            color: #fff;
+        }
+        .main_item_youhui_shang p{
+            font-size: .16rem;
+            line-height: .27rem;
+            color: #7C7C7C;
+            margin-left: .15rem;
+            float: left;
+        }
+        .main_bottom_item_zhong_you{
+            float: right;
+        }
+        .main_bottom_item_zhong_you_icon{
+            height: .25rem;
+            background: #00A9FF;
+            border: .01rem solid #0599FF;
+            border-radius: .07rem;
+            font-size: .16rem;
+            line-height: .22rem;
+            text-align: center;
+            float: right;
+            margin-bottom: .04rem;
+        }
+        .main_bottom_item_zhong_you p{
+            font-size: .14rem;
+            margin-top: .2rem;
+            line-height: .22rem;
+        }
+        .footer{
+            height: .96rem;
+            width: 100%;
+            position: fixed;
+            border-top: 2px solid #DDDDDD;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+        }
+        .footer_item{
+            width: 1.8rem;
+            height: .96rem;
+            float: left;
+        }
+        .footer_item_shang{
+            width: .38rem;
+            height: .36rem;
+            margin-left: .71rem;
+            margin-top: .2rem;
+            position: relative;
+        }
+        .footer_item_shang img{
+            width: .38rem;
+            height: .36rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .footer_item_xia{
+            margin-top: .12rem;
+            font-size: .16rem;
+            line-height: .16rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<section class="header">
+    <div class="header_search">
+        <input type="submit" value="&#xe633;" class="sousuo">
+        <input type="text" placeholder="搜索蛋糕、鲜花、礼品">
+    </div>
+</section>
+<section class="main">
+    <div class="main_banner">
+       <div class="main_banner_pic">
+           <img src="imgs/banner.jpg" alt="">
+       </div>
+    </div>
+    <div class="main_banner_daohang">
+        <div class="main_banner_ditem">
+            <div class="main_banner_ditem_tu">
+                <img src="imgs/001.png" alt="">
+            </div>
+            <div class="main_banner_ditem_zi">美食</div>
+        </div>
+        <div class="main_banner_ditem">
+            <div class="main_banner_ditem_tu">
+                <img src="imgs/002.png" alt="">
+            </div>
+            <div class="main_banner_ditem_zi">美食</div>
+        </div>
+        <div class="main_banner_ditem">
+            <div class="main_banner_ditem_tu">
+                <img src="imgs/003.png" alt="">
+            </div>
+            <div class="main_banner_ditem_zi">美食</div>
+        </div>
+        <div class="main_banner_ditem">
+            <div class="main_banner_ditem_tu">
+                <img src="imgs/004.png" alt="">
+            </div>
+            <div class="main_banner_ditem_zi">美食</div>
+        </div>
+        <div class="main_banner_ditem">
+            <div class="main_banner_ditem_tu">
+                <img src="imgs/005.png" alt="">
+            </div>
+            <div class="main_banner_ditem_zi">美食</div>
+        </div>
+        <div class="main_banner_ditem">
+            <div class="main_banner_ditem_tu">
+                <img src="imgs/006.png" alt="">
+            </div>
+            <div class="main_banner_ditem_zi">美食</div>
+        </div>
+        <div class="main_banner_ditem">
+            <div class="main_banner_ditem_tu">
+                <img src="imgs/007.png" alt="">
+            </div>
+            <div class="main_banner_ditem_zi">美食</div>
+        </div>
+        <div class="main_banner_ditem">
+            <div class="main_banner_ditem_tu">
+                <img src="imgs/008.png" alt="">
+            </div>
+            <div class="main_banner_ditem_zi">美食</div>
+        </div>
+        <div class="main_banner_ditem">
+            <div class="main_banner_ditem_tu">
+                <img src="imgs/009.png" alt="">
+            </div>
+            <div class="main_banner_ditem_zi">美食</div>
+        </div>
+        <div class="main_banner_ditem">
+            <div class="main_banner_ditem_tu">
+                <img src="imgs/010.png" alt="">
+            </div>
+            <div class="main_banner_ditem_zi">美食</div>
+        </div>
+    </div>
+    <div class="main_zhanshi">
+        <div class="main_zhanshi_item">
+            <h1>限量抢购</h1>
+            <h2>超值美味 9.9元起</h2>
+            <h3>587人</h3>
+            <p>正在抢</p>
+            <span>&gt;</span>
+            <div class="main_zhanshi_item_tu">
+                <img src="imgs/12.png" alt="">
+            </div>
+        </div>
+        <div class="main_zhanshi_item" style="margin-right: 0;">
+            <h1>限量抢购</h1>
+            <h2>超值美味 9.9元起</h2>
+            <h3>587人</h3>
+            <p>正在抢</p>
+            <span>&gt;</span>
+            <div class="main_zhanshi_item_tu">
+                <img src="imgs/12.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="main_bottom">
+        <div class="main_bottom_title">
+            <div class="main_bottom_title_juxing"></div>
+            <p>推荐商家</p>
+            <div class="main_bottom_title_juxing"></div>
+        </div>
+        <div class="main_bottom_item">
+            <div class="main_bottom_item_left">
+                <img src="imgs/1.png" alt="">
+            </div>
+            <div class="main_bottom_item_zhong">
+                <h1>叫了只炸鸡(太原店)</h1>
+                <div class="main_bottom_item_zhong_zuo">
+                    <div class="main_item_qingkuang">
+                        <span>★★★★★</span>
+                        <p>5月售260单</p>
+                    </div>
+                    <div class="main_item_price">
+                        <span>&yen;</span>
+                        <p>20起送  |  夜间配送费</p>
+                        <span>&yen;</span>
+                        <p>7.5</p>
+                    </div>
+                    <div class="main_item_youhui">
+                        <div class="main_item_youhui_shang">
+                            <div class="box">首</div>
+                            <p>新用户下单立减17元</p>
+                        </div>
+                        <div class="main_item_youhui_shang">
+                            <div class="box" style="background: #F07373;">减</div>
+                            <p>满30减12，满50减20，满70减30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_bottom_item_zhong_you">
+                    <div class="main_bottom_item_zhong_you_icon">蜂鸟专送</div>
+                    <p>2.18km  |  24分钟</p>
+                    <p>10个活动</p>
+                    <span></span>
+                </div>
+            </div>
+
+        </div>
+        <div class="main_bottom_item">
+            <div class="main_bottom_item_left">
+                <img src="imgs/1.png" alt="">
+            </div>
+            <div class="main_bottom_item_zhong">
+                <h1>叫了只炸鸡(太原店)</h1>
+                <div class="main_bottom_item_zhong_zuo">
+                    <div class="main_item_qingkuang">
+                        <span>★★★★★</span>
+                        <p>5月售260单</p>
+                    </div>
+                    <div class="main_item_price">
+                        <span>&yen;</span>
+                        <p>20起送  |  夜间配送费</p>
+                        <span>&yen;</span>
+                        <p>7.5</p>
+                    </div>
+                    <div class="main_item_youhui">
+                        <div class="main_item_youhui_shang">
+                            <div class="box">首</div>
+                            <p>新用户下单立减17元</p>
+                        </div>
+                        <div class="main_item_youhui_shang">
+                            <div class="box" style="background: #F07373;">减</div>
+                            <p>满30减12，满50减20，满70减30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_bottom_item_zhong_you">
+                    <div class="main_bottom_item_zhong_you_icon">蜂鸟专送</div>
+                    <p>2.18km  |  24分钟</p>
+                    <p>10个活动</p>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="main_bottom_item">
+            <div class="main_bottom_item_left">
+                <img src="imgs/1.png" alt="">
+            </div>
+            <div class="main_bottom_item_zhong">
+                <h1>叫了只炸鸡(太原店)</h1>
+                <div class="main_bottom_item_zhong_zuo">
+                    <div class="main_item_qingkuang">
+                        <span>★★★★★</span>
+                        <p>5月售260单</p>
+                    </div>
+                    <div class="main_item_price">
+                        <span>&yen;</span>
+                        <p>20起送  |  夜间配送费</p>
+                        <span>&yen;</span>
+                        <p>7.5</p>
+                    </div>
+                    <div class="main_item_youhui">
+                        <div class="main_item_youhui_shang">
+                            <div class="box">首</div>
+                            <p>新用户下单立减17元</p>
+                        </div>
+                        <div class="main_item_youhui_shang">
+                            <div class="box" style="background: #F07373;">减</div>
+                            <p>满30减12，满50减20，满70减30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_bottom_item_zhong_you">
+                    <div class="main_bottom_item_zhong_you_icon">蜂鸟专送</div>
+                    <p>2.18km  |  24分钟</p>
+                    <p>10个活动</p>
+                    <span></span>
+                </div>
+            </div>
+
+        </div>
+        <div class="main_bottom_item">
+            <div class="main_bottom_item_left">
+                <img src="imgs/1.png" alt="">
+            </div>
+            <div class="main_bottom_item_zhong">
+                <h1>叫了只炸鸡(太原店)</h1>
+                <div class="main_bottom_item_zhong_zuo">
+                    <div class="main_item_qingkuang">
+                        <span>★★★★★</span>
+                        <p>5月售260单</p>
+                    </div>
+                    <div class="main_item_price">
+                        <span>&yen;</span>
+                        <p>20起送  |  夜间配送费</p>
+                        <span>&yen;</span>
+                        <p>7.5</p>
+                    </div>
+                    <div class="main_item_youhui">
+                        <div class="main_item_youhui_shang">
+                            <div class="box">首</div>
+                            <p>新用户下单立减17元</p>
+                        </div>
+                        <div class="main_item_youhui_shang">
+                            <div class="box" style="background: #F07373;">减</div>
+                            <p>满30减12，满50减20，满70减30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_bottom_item_zhong_you">
+                    <div class="main_bottom_item_zhong_you_icon">蜂鸟专送</div>
+                    <p>2.18km  |  24分钟</p>
+                    <p>10个活动</p>
+                    <span></span>
+                </div>
+            </div>
+
+        </div>
+        <div class="main_bottom_item">
+            <div class="main_bottom_item_left">
+                <img src="imgs/1.png" alt="">
+            </div>
+            <div class="main_bottom_item_zhong">
+                <h1>叫了只炸鸡(太原店)</h1>
+                <div class="main_bottom_item_zhong_zuo">
+                    <div class="main_item_qingkuang">
+                        <span>★★★★★</span>
+                        <p>5月售260单</p>
+                    </div>
+                    <div class="main_item_price">
+                        <span>&yen;</span>
+                        <p>20起送  |  夜间配送费</p>
+                        <span>&yen;</span>
+                        <p>7.5</p>
+                    </div>
+                    <div class="main_item_youhui">
+                        <div class="main_item_youhui_shang">
+                            <div class="box">首</div>
+                            <p>新用户下单立减17元</p>
+                        </div>
+                        <div class="main_item_youhui_shang">
+                            <div class="box" style="background: #F07373;">减</div>
+                            <p>满30减12，满50减20，满70减30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_bottom_item_zhong_you">
+                    <div class="main_bottom_item_zhong_you_icon">蜂鸟专送</div>
+                    <p>2.18km  |  24分钟</p>
+                    <p>10个活动</p>
+                    <span></span>
+                </div>
+            </div>
+
+        </div>
+        <div class="main_bottom_item">
+            <div class="main_bottom_item_left">
+                <img src="imgs/1.png" alt="">
+            </div>
+            <div class="main_bottom_item_zhong">
+                <h1>叫了只炸鸡(太原店)</h1>
+                <div class="main_bottom_item_zhong_zuo">
+                    <div class="main_item_qingkuang">
+                        <span>★★★★★</span>
+                        <p>5月售260单</p>
+                    </div>
+                    <div class="main_item_price">
+                        <span>&yen;</span>
+                        <p>20起送  |  夜间配送费</p>
+                        <span>&yen;</span>
+                        <p>7.5</p>
+                    </div>
+                    <div class="main_item_youhui">
+                        <div class="main_item_youhui_shang">
+                            <div class="box">首</div>
+                            <p>新用户下单立减17元</p>
+                        </div>
+                        <div class="main_item_youhui_shang">
+                            <div class="box" style="background: #F07373;">减</div>
+                            <p>满30减12，满50减20，满70减30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_bottom_item_zhong_you">
+                    <div class="main_bottom_item_zhong_you_icon">蜂鸟专送</div>
+                    <p>2.18km  |  24分钟</p>
+                    <p>10个活动</p>
+                    <span></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="footer">
+    <div class="footer_item">
+        <div class="footer_item_shang">
+            <img src="imgs/f1a.png" alt="">
+        </div>
+        <div class="footer_item_xia" style="color: #008CFF;">首页</div>
+    </div>
+    <div class="footer_item">
+        <div class="footer_item_shang">
+            <a href="find.html"> <img src="imgs/f2.png" alt=""></a>
+        </div>
+        <div class="footer_item_xia">发现</div>
+    </div>
+    <div class="footer_item">
+        <div class="footer_item_shang">
+            <a href="order.html"></a><img src="imgs/f3.png" alt="">
+        </div>
+        <div class="footer_item_xia">订单</div>
+    </div>
+    <div class="footer_item">
+        <div class="footer_item_shang">
+            <a href="wode.html"></a><img src="imgs/f4.png" alt="">
+        </div>
+        <div class="footer_item_xia">我的</div>
+    </div>
+</section>
+</body>
+</html>
